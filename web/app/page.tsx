@@ -1,7 +1,21 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { Heart, Send, FileText, Sparkles } from 'lucide-react';
+// Using emoji alternatives until lucide-react resolves
+// import { Heart, Send, FileText, Sparkles } from 'lucide-react';
+
+function Heart({ className, fill }: { className?: string; fill?: string }) {
+  return <span className={className}>💝</span>;
+}
+function Send({ className }: { className?: string }) {
+  return <span className={className}>📤</span>;
+}
+function FileText({ className }: { className?: string }) {
+  return <span className={className}>📄</span>;
+}
+function Sparkles({ className }: { className?: string }) {
+  return <span className={className}>✨</span>;
+}
 
 type Message = {
   role: 'user' | 'assistant' | 'system';
