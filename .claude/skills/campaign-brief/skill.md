@@ -1,18 +1,15 @@
 ---
 name: campaign-brief
-category: strategy
+description: "Generate a structured campaign brief to align all stakeholders"
+argument-hint: "[no arguments]"
+user-invocable: true
+allowed-tools: Read, Write, AskUserQuestion
 agents: [chief-strategy-officer, brand-lead, media-lead]
 ---
 
 # Campaign Brief
 
-Generate a structured campaign brief to align all stakeholders.
-
-## Usage
-
-```
-/campaign-brief
-```
+Generate a structured campaign brief with audience, positioning, channels, and KPIs.
 
 ## Process
 
