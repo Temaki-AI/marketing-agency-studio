@@ -5,11 +5,38 @@ argument-hint: "[no arguments]"
 user-invocable: true
 allowed-tools: Read, Write, AskUserQuestion
 agents: [chief-strategy-officer, brand-lead, media-lead]
+prerequisites: [brand-workshop, content-strategy]
 ---
 
 # Campaign Brief
 
 Generate a structured campaign brief with audience, positioning, channels, and KPIs.
+
+**This is Level 3.** Requires brand foundation and content strategy first.
+
+---
+
+## Prerequisites Check
+
+Before starting, verify:
+- `strategy/brand/positioning.md` exists (who you serve, differentiation)
+- `strategy/brand/voice-guidelines.md` exists (tone and terminology)
+- `strategy/content/editorial-calendar.md` exists (content to promote/retarget)
+
+If any missing:
+```
+Campaigns need foundation first:
+
+Missing brand positioning? → Run /brand-workshop
+Missing content strategy? → Run /content-strategy
+
+You can't run effective campaigns without knowing:
+- Who you are (brand)
+- Who you serve (positioning)
+- What content exists to promote (editorial calendar)
+```
+
+---
 
 ## Process
 

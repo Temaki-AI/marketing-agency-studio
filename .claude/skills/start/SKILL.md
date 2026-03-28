@@ -1,6 +1,6 @@
 ---
 name: start
-description: "Onboarding — asks what you need, then routes to the right workflow"
+description: "Onboarding — detects what foundation exists, then routes to next step"
 argument-hint: "[no arguments]"
 user-invocable: true
 allowed-tools: Read, Glob, AskUserQuestion
@@ -8,171 +8,224 @@ allowed-tools: Read, Glob, AskUserQuestion
 
 # Marketing Agency Onboarding
 
-Entry point for new users. Asks where you are, then routes to the right workflow.
+Entry point that checks what foundation exists, then guides you to the right next step.
+
+**Marketing hierarchy:** Brand → Content/Social → Campaigns
+
+You can't run effective campaigns without a brand foundation.
 
 ---
 
 ## Workflow
 
-### 1. Detect Project State (Silent)
+### 1. Detect Foundation (Silent)
 
-Check context before asking:
-- **Brand guidelines exist?** Check `strategy/brand-guidelines.md`
-- **Active campaigns?** Glob for files in `campaigns/*/`
-- **Campaign briefs?** Check `strategy/briefs/`
-- **Creative assets?** Check `creative/` subdirectories
-- **Analytics setup?** Check for dashboard configs in `analytics/`
+Check what exists:
+- **Brand foundation?** Check `strategy/brand/`
+  - `positioning.md` - Who we are, who we serve, how we're different
+  - `voice-guidelines.md` - Tone, terminology, examples
+  - `visual-identity.md` - Logo, colors, typography, imagery
+- **Content strategy?** Check `strategy/content/editorial-calendar.md`
+- **Social presence?** Check `strategy/social/platform-strategy.md`
+- **SEO foundation?** Check `strategy/seo/keyword-research.md`
+- **Active campaigns?** Glob `campaigns/*/brief.md`
 
-Store findings internally to tailor recommendations.
+### 2. Route Based on Foundation
+
+**Scenario A: Nothing exists (Fresh start)**
+```
+Welcome to Marketing Agency AI Studio!
+
+I checked your workspace and don't see any brand foundation yet.
+
+Before we can create campaigns, content, or social posts, we need to establish:
+
+1. **Brand Positioning** - Who you are, who you serve, how you're different
+2. **Brand Voice** - How you communicate (tone, terminology, style)
+3. **Visual Identity** - Logo, colors, typography, design principles
+
+This is your foundation. Everything else builds on top.
+
+Ready to start with brand positioning?
+
+→ Run /brand-workshop to establish your brand foundation
+```
+
+**Scenario B: Brand exists, no content strategy**
+```
+Great! I see you have brand positioning and voice guidelines.
+
+Next layer: Content & Social Foundation
+
+Before launching paid campaigns, you need organic presence:
+
+1. **Content Strategy** - Topics, formats, publishing cadence
+2. **Social Strategy** - Platforms, voice per channel, engagement approach
+3. **SEO Foundation** - Keywords, site structure, content optimization
+
+This ensures you have assets to promote and channels to retarget from.
+
+What would you like to build next?
+
+→ /content-strategy - Plan editorial calendar and topics
+→ /social-strategy - Define platform presence
+→ /seo-audit - Establish keyword and content foundation
+```
+
+**Scenario C: Brand + Content/Social exist, ready for campaigns**
+```
+Perfect! You have:
+✅ Brand foundation
+✅ Content strategy
+✅ Social presence
+✅ SEO framework
+
+Now you're ready for paid campaigns.
+
+What's your goal?
+
+→ /campaign-brief - Launch a new campaign
+→ /performance-review - Optimize existing campaigns
+→ /funnel-analysis - Find conversion bottlenecks
+```
+
+**Scenario D: Everything exists, optimization mode**
+```
+Welcome back! You have a full marketing foundation.
+
+What do you need help with today?
+
+**Strategy:**
+→ /competitor-audit - See what competitors are doing
+→ /audience-research - Deepen customer understanding
+
+**Creative:**
+→ /ad-copy-review - Review ad copy
+→ /landing-page-critique - Optimize conversion
+→ /content-review - Review blog post or social content
+
+**Media:**
+→ /campaign-setup - Launch new campaign
+→ /ab-test-plan - Design A/B test
+→ /channel-plan - Reallocate budget
+
+**Analytics:**
+→ /funnel-analysis - Find drop-off points
+→ /attribution-report - Understand channel contribution
+→ /performance-review - Campaign post-mortem
+```
+
+### 3. Enforce Prerequisites
+
+If user tries to skip steps:
+
+```
+> /campaign-brief
+
+[Chief Strategy Officer]
+I see you want to create a campaign, but I don't see brand positioning in 
+strategy/brand/positioning.md.
+
+Campaigns need a clear brand foundation:
+- Who are you?
+- Who do you serve?
+- What makes you different?
+
+Without this, we can't create consistent, effective campaigns.
+
+Run /brand-workshop first to establish your foundation.
+```
 
 ---
 
-### 2. Ask Where the User Is
+## Marketing Hierarchy
 
-> **Welcome to Marketing Agency AI Studio!**
->
-> What brings you here today?
->
-> **A) New client onboarding** — I'm starting fresh with a new client or product
-> **B) Campaign planning** — I need to plan and launch a new campaign
-> **C) Creative review** — I have ad copy, designs, or landing pages to review
-> **D) Performance analysis** — I want to analyze and optimize existing campaigns
-> **E) Ad hoc request** — I need specific help (copy, design, funnel analysis, etc.)
+```
+Level 1: BRAND FOUNDATION (Required first)
+├─ Brand positioning
+├─ Brand voice guidelines
+└─ Visual identity
+
+Level 2: ORGANIC PRESENCE (Build before paid)
+├─ Content strategy
+├─ Social media strategy
+├─ SEO foundation
+└─ Email marketing foundation
+
+Level 3: PAID CAMPAIGNS (Last layer)
+├─ Campaign planning
+├─ Media buying
+├─ Performance optimization
+└─ Attribution analysis
+
+Level 4: OPTIMIZATION (Ongoing)
+├─ A/B testing
+├─ Conversion rate optimization
+├─ Analytics and reporting
+└─ Competitive intelligence
+```
+
+**You can't skip levels.** Each builds on the previous.
 
 ---
 
-### 3. Route Based on Response
+## Example Interactions
 
-**Option A: New Client Onboarding**
-```
-Great! Let's start with understanding your client and their goals.
-
-Run /campaign-brief to create your first campaign.
-
-Before that, I recommend creating brand guidelines:
-- Tone and voice
-- Key messaging
-- Visual identity
-- Prohibited terms
-
-Should I help you create a brand guidelines doc first?
-```
-
-**Option B: Campaign Planning**
-```
-Perfect. Let's structure your campaign.
-
-Run /campaign-brief to define:
-- Objective and KPIs
-- Target audience
-- Channel strategy
-- Creative approach
-- Timeline
-
-Ready to start?
-```
-
-**Option C: Creative Review**
-```
-I can help review:
-- Ad copy (/ad-copy-review)
-- Landing pages (/landing-page-critique)
-- Design assets (/design-review)
-- Brand consistency (/brand-consistency-check)
-
-What would you like me to review?
-```
-
-**Option D: Performance Analysis**
-```
-Let's dive into your data.
-
-I can help with:
-- Funnel analysis (/funnel-analysis)
-- Attribution reporting (/attribution-report)
-- Campaign post-mortem (/performance-review)
-- A/B test planning (/ab-test-plan)
-
-What would you like to analyze?
-```
-
-**Option E: Ad Hoc Request**
-```
-Got it. What specific help do you need?
-
-I can assist with:
-- Strategy: positioning, audience personas, competitor research
-- Creative: copywriting, design, landing pages
-- Media: channel selection, budget allocation, campaign setup
-- Analytics: reporting, dashboards, attribution
-- Compliance: legal review, accessibility, privacy
-
-What's the task?
-```
-
----
-
-### 4. Provide Context
-
-After routing, explain:
-- Which agents will help (e.g., Chief Strategy Officer, Brand Lead, Creative Lead)
-- Expected timeline
-- What you'll need to provide
-- What output you'll get
-
----
-
-## Example Interaction
-
+**Fresh start:**
 ```
 > /start
 
-[Chief Strategy Officer]
-Welcome to Marketing Agency AI Studio!
+I checked your workspace - no brand foundation yet.
 
-What brings you here today?
+Before campaigns, we need your brand foundation.
 
-A) New client onboarding
-B) Campaign planning
-C) Creative review
-D) Performance analysis
-E) Ad hoc request
-
-> B
-
-Perfect. Let's structure your campaign.
-
-Run /campaign-brief to define:
-- Objective and KPIs
-- Target audience
-- Channel strategy
-- Creative approach
-- Timeline
+Run /brand-workshop to define:
+- Positioning (who you are, who you serve, differentiation)
+- Voice (tone, terminology, style)
+- Visual identity (colors, typography, imagery)
 
 Ready to start?
 
 > Yes
 
-Great! I'll ask you a few questions...
-
-1. What are we promoting?
+Great! /brand-workshop will walk you through this...
 ```
 
----
+**Trying to skip:**
+```
+> /campaign-brief
 
-## Follow-Up Commands
+Hold on - I don't see brand positioning yet.
 
-After routing, suggest:
-- `/campaign-brief` for campaign planning
-- `/ad-copy-review` for creative review
-- `/funnel-analysis` for performance analysis
-- Type "help" to see all 25 available skills
+You need brand foundation before campaigns:
+→ /brand-workshop first
+
+Then we can build campaigns on top of that.
+```
+
+**All foundation exists:**
+```
+> /start
+
+Perfect! Full foundation in place:
+✅ Brand
+✅ Content/Social
+✅ SEO
+
+Ready for:
+→ /campaign-brief - New campaign
+→ /content-review - Review blog post
+→ /ad-copy-review - Review ad copy
+→ /funnel-analysis - Optimize conversion
+
+What do you need?
+```
 
 ---
 
 ## Notes
 
-- Don't assume user knows marketing terminology
-- Offer examples for each option
-- If user is confused, break it down further
-- Always show next steps clearly
+- **Enforce sequence** - Check prerequisites before running advanced skills
+- **Show progress** - Tell user what they've completed, what's next
+- **Be helpful** - Don't just block, guide them to the right next step
+- **Context-aware** - Recommendations based on what exists
