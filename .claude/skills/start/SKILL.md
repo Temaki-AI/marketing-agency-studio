@@ -51,34 +51,55 @@ Ready to start with brand positioning?
 → Run /brand-workshop to establish your brand foundation
 ```
 
-**Scenario B: Brand exists, no content strategy**
+**Scenario B: Brand exists, no core assets**
 ```
 Great! I see you have brand positioning and voice guidelines.
 
-Next layer: Content & Social Foundation
+Next layer: Core Assets
 
-Before launching paid campaigns, you need organic presence:
+Before creating content or campaigns, you need fundamental assets:
 
-1. **Content Strategy** - Topics, formats, publishing cadence
-2. **Social Strategy** - Platforms, voice per channel, engagement approach
-3. **SEO Foundation** - Keywords, site structure, content optimization
+1. **Website** - Homepage, product pages, about, contact
+2. **Landing Pages** - Campaign templates
+3. **Email Templates** - Design system
+4. **Sales Collateral** - Deck, one-pager
 
-This ensures you have assets to promote and channels to retarget from.
+You can't publish content without a website. You can't run ads without landing pages.
 
 What would you like to build next?
 
-→ /content-strategy - Plan editorial calendar and topics
-→ /social-strategy - Define platform presence
-→ /seo-audit - Establish keyword and content foundation
+→ /website-foundation - Build homepage + core pages
+→ /landing-page-template - Campaign landing page template
+→ /email-templates - Email design system
+→ /sales-deck - Sales presentation
 ```
 
-**Scenario C: Brand + Content/Social exist, ready for campaigns**
+**Scenario C: Brand + Assets exist, ready for content**
 ```
 Perfect! You have:
 ✅ Brand foundation
+✅ Website and core assets
+
+Now you're ready for content and distribution:
+
+1. **Content Strategy** - Topics, formats, publishing cadence
+2. **Social Strategy** - Platforms, voice per channel
+3. **SEO Foundation** - Keywords, optimization
+
+What would you like to build?
+
+→ /content-strategy - Plan editorial calendar
+→ /social-strategy - Define platform presence
+→ /seo-audit - Keyword research and optimization
+```
+
+**Scenario D: Brand + Assets + Content exist, ready for campaigns**
+```
+Perfect! You have:
+✅ Brand foundation
+✅ Website and core assets
 ✅ Content strategy
 ✅ Social presence
-✅ SEO framework
 
 Now you're ready for paid campaigns.
 
@@ -89,7 +110,7 @@ What's your goal?
 → /funnel-analysis - Find conversion bottlenecks
 ```
 
-**Scenario D: Everything exists, optimization mode**
+**Scenario E: Everything exists, optimization mode**
 ```
 Welcome back! You have a full marketing foundation.
 
@@ -144,21 +165,28 @@ Run /brand-workshop first to establish your foundation.
 Level 1: BRAND FOUNDATION (Required first)
 ├─ Brand positioning
 ├─ Brand voice guidelines
-└─ Visual identity
+├─ Visual identity
+└─ StoryBrand messaging
 
-Level 2: ORGANIC PRESENCE (Build before paid)
+Level 2: CORE ASSETS (Build before content/campaigns)
+├─ Website (homepage, product, about, contact)
+├─ Landing page templates
+├─ Email templates
+└─ Sales deck / collateral
+
+Level 3: CONTENT & DISTRIBUTION (After assets exist)
 ├─ Content strategy
 ├─ Social media strategy
 ├─ SEO foundation
 └─ Email marketing foundation
 
-Level 3: PAID CAMPAIGNS (Last layer)
+Level 4: PAID CAMPAIGNS (After foundation + assets + content)
 ├─ Campaign planning
 ├─ Media buying
 ├─ Performance optimization
 └─ Attribution analysis
 
-Level 4: OPTIMIZATION (Ongoing)
+Level 5: OPTIMIZATION (Ongoing)
 ├─ A/B testing
 ├─ Conversion rate optimization
 ├─ Analytics and reporting

@@ -5,14 +5,14 @@ argument-hint: "[no arguments]"
 user-invocable: true
 allowed-tools: Read, Write, AskUserQuestion
 agents: [content-lead, seo-specialist]
-prerequisites: [brand-workshop]
+prerequisites: [brand-workshop, website-foundation]
 ---
 
 # Content Strategy
 
 Plan your content foundation: topics, formats, cadence, distribution.
 
-**This is Level 2.** Requires brand positioning from `/brand-workshop`.
+**This is Level 3.** Requires brand positioning + website from `/brand-workshop` and `/website-foundation`.
 
 ---
 
@@ -21,11 +21,15 @@ Plan your content foundation: topics, formats, cadence, distribution.
 Before starting, verify:
 - `strategy/brand/positioning.md` exists (who you serve, their problems)
 - `strategy/brand/voice-guidelines.md` exists (tone and style)
+- `strategy/assets/website-blueprint.md` exists (where content will live)
 
 If missing:
 ```
-Content strategy needs brand foundation first.
-Run /brand-workshop to establish positioning and voice.
+Content strategy needs foundation first:
+→ /brand-workshop (positioning and voice)
+→ /website-foundation (website to publish content on)
+
+You can't publish content without a website. Build your core assets first.
 ```
 
 ---

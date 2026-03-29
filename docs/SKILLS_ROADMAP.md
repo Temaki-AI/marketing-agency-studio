@@ -2,15 +2,16 @@
 
 ## Implementation Status
 
-**✅ Implemented (6 skills):**
+**✅ Implemented (7 skills):**
 - `/start` - Onboarding with prerequisite checking
 - `/brand-workshop` - Brand positioning, voice, visual identity
 - `/storybrand` - StoryBrand 7-part messaging framework
+- `/website-foundation` - Homepage, product, about, contact pages
 - `/content-strategy` - Editorial calendar, SEO foundation
 - `/campaign-brief` - Campaign planning (requires brand + content)
 - `/ad-copy-review` - Copy review with brand voice check
 
-**🔨 To Be Implemented (35+ skills):**
+**🔨 To Be Implemented (36+ skills):**
 
 ---
 
@@ -36,7 +37,38 @@ Generates one-liner and homepage copy structure
 
 ---
 
-## Level 2: Organic Foundation (Build Before Paid)
+## Level 2: Core Assets (Build Before Content/Campaigns)
+
+### ✅ `/website-foundation`
+**Agents:** Copywriter, Landing Page Designer, Brand Lead
+**Purpose:** Build homepage, product pages, about, contact using BrandScript
+**Output:** `strategy/assets/website-blueprint.md`
+**Structure:**
+- Homepage (7-section StoryBrand structure)
+- Product/service pages
+- About page (mission-driven)
+- Contact page
+- Pricing (optional)
+- Resources hub (if content exists)
+
+### 🔨 `/landing-page-template`
+**Agents:** Landing Page Designer, Copywriter
+**Purpose:** Campaign landing page template (for ads, email, partnerships)
+**Output:** `strategy/assets/landing-page-template.md`
+
+### 🔨 `/email-templates`
+**Agents:** Email Designer, Copywriter
+**Purpose:** Email design system (header, footer, layouts)
+**Output:** `strategy/assets/email-templates.md`
+
+### 🔨 `/sales-deck`
+**Agents:** Account Director, Copywriter, Graphic Designer
+**Purpose:** Sales presentation / one-pager
+**Output:** `strategy/assets/sales-deck-outline.md`
+
+---
+
+## Level 3: Content & Distribution (After Assets Exist)
 
 ### ✅ `/content-strategy`
 Editorial calendar, SEO keywords, publishing cadence
@@ -77,7 +109,7 @@ Editorial calendar, SEO keywords, publishing cadence
 
 ---
 
-## Level 3: Paid Campaigns (After Foundation)
+## Level 4: Paid Campaigns (After Foundation + Assets + Content)
 
 ### ✅ `/campaign-brief`
 Campaign planning with KPIs, channels, budget
@@ -100,7 +132,7 @@ Campaign planning with KPIs, channels, budget
 
 ---
 
-## Level 4: Content Production
+## Level 5: Content Production
 
 ### 🔨 `/content-production`
 **Agents:** Content Writer, SEO Specialist, Brand Lead
@@ -136,7 +168,7 @@ Campaign planning with KPIs, channels, budget
 
 ---
 
-## Level 5: Social Media Execution
+## Level 6: Social Media Execution
 
 ### 🔨 `/social-content`
 **Agents:** Social Media Manager, Copywriter
@@ -169,7 +201,7 @@ Campaign planning with KPIs, channels, budget
 
 ---
 
-## Level 6: Email Execution
+## Level 7: Email Execution
 
 ### 🔨 `/email-production`
 **Agents:** Email Marketer, Copywriter, Email Designer
@@ -194,7 +226,7 @@ Campaign planning with KPIs, channels, budget
 
 ---
 
-## Level 7: Creative Services
+## Level 8: Creative Services
 
 ### 🔨 `/website-copy`
 **Agents:** Copywriter, Brand Lead, Landing Page Designer
@@ -228,7 +260,7 @@ Campaign planning with KPIs, channels, budget
 
 ---
 
-## Level 8: Analytics & Optimization
+## Level 9: Analytics & Optimization
 
 ### 🔨 `/funnel-analysis`
 **Agents:** Analytics Lead, Data Analyst
@@ -262,7 +294,7 @@ Campaign planning with KPIs, channels, budget
 
 ---
 
-## Level 9: Advanced Strategy
+## Level 10: Advanced Strategy
 
 ### 🔨 `/competitor-audit`
 **Agents:** Chief Strategy Officer, Brand Lead, Creative Lead
@@ -296,7 +328,7 @@ Campaign planning with KPIs, channels, budget
 
 ---
 
-## Level 10: Team Coordination (Multi-Agent)
+## Level 11: Team Coordination (Multi-Agent)
 
 ### 🔨 `/team-launch`
 **Agents:** All leads (Strategy, Creative, Media, Analytics, Compliance)
@@ -357,8 +389,8 @@ Campaign planning with KPIs, channels, budget
 
 ## Total Skill Count
 
-- **Implemented:** 6
-- **To implement:** 34
-- **Total:** 40 skills
+- **Implemented:** 7
+- **To implement:** 36
+- **Total:** 43 skills
 
 This represents a **complete full-service marketing agency** covering brand, content, social, email, SEO, paid media, creative, and analytics.
