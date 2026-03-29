@@ -2,9 +2,10 @@
 
 ## Implementation Status
 
-**✅ Implemented (5 skills):**
+**✅ Implemented (6 skills):**
 - `/start` - Onboarding with prerequisite checking
 - `/brand-workshop` - Brand positioning, voice, visual identity
+- `/storybrand` - StoryBrand 7-part messaging framework
 - `/content-strategy` - Editorial calendar, SEO foundation
 - `/campaign-brief` - Campaign planning (requires brand + content)
 - `/ad-copy-review` - Copy review with brand voice check
@@ -18,6 +19,20 @@
 ### ✅ `/brand-workshop`
 Establish positioning, voice, visual identity
 **Output:** `strategy/brand/positioning.md`, `voice-guidelines.md`, `visual-identity.md`
+
+### ✅ `/storybrand`
+Clarify marketing message using StoryBrand 7-part framework (Donald Miller)
+**Output:** `strategy/brand/brandscript.md`
+**Workflow:**
+1. Character (who's the hero - your customer)
+2. Problem (external, internal, philosophical)
+3. Guide (empathy + authority)
+4. Plan (3 simple steps)
+5. Call to Action (direct + transitional)
+6. Failure (what they avoid)
+7. Success (status, completeness, external)
+
+Generates one-liner and homepage copy structure
 
 ---
 
@@ -342,8 +357,8 @@ Campaign planning with KPIs, channels, budget
 
 ## Total Skill Count
 
-- **Implemented:** 5
-- **To implement:** 35
+- **Implemented:** 6
+- **To implement:** 34
 - **Total:** 40 skills
 
 This represents a **complete full-service marketing agency** covering brand, content, social, email, SEO, paid media, creative, and analytics.
